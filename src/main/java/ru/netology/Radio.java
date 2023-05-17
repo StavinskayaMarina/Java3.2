@@ -1,16 +1,23 @@
+package ru.netology;
+
 public class Radio {
+
+    //Станции
+
     public int radioStationNumber;
     private int minStationNumber = 0;
     private int maxStationNumber = 9;
-    private int currentStation;
+    public int currentStation;
 
-    public int getCurrentStation () {
+    public int getCurrentStation() {
         return currentStation;
     }
-    public int getMinStationNumber () {
+
+    public int getMinStationNumber() {
         return minStationNumber;
     }
-    public int getMaxStationNumber () {
+
+    public int getMaxStationNumber() {
         return maxStationNumber;
     }
 
@@ -21,6 +28,7 @@ public class Radio {
             currentStation = minStationNumber;
         }
     }
+
     public void setPrevStation() {
         if (currentStation > minStationNumber) {
             currentStation = currentStation - 1;
@@ -28,7 +36,8 @@ public class Radio {
             currentStation = maxStationNumber;
         }
     }
-    public void setCurrentStation (int newCurrentStation) {
+
+    public void setCurrentStation(int newCurrentStation) {
         if (newCurrentStation < minStationNumber) {
             return;
         }
@@ -38,25 +47,38 @@ public class Radio {
         currentStation = newCurrentStation;
     }
 
-
+    //Громкость
 
     public int soundVolume;
     private int minSoundVolume = 0;
     private int maxSoundVolume = 100;
     private int currentSoundVolume;
 
-    public int getCurrentSoundVolume () {
+    public int getCurrentSoundVolume() {
         return currentSoundVolume;
     }
 
-    public int getMinSoundVolume () {
+    public int getMinSoundVolume() {
         return minSoundVolume;
     }
 
-    public int getMaxSoundVolume () {
+    public int getMaxSoundVolume() {
         return maxSoundVolume;
     }
-    public void setCurrentSoundVolume (int currentSoundVolume) {
+
+    public void setTurnUpVolume() {
+        if (currentSoundVolume < maxSoundVolume) {
+            currentSoundVolume = currentSoundVolume + 1;
+        }
+    }
+
+    public void setTurnDownVolume() {
+        if (currentSoundVolume > minSoundVolume) {
+            currentSoundVolume = currentSoundVolume - 1;
+        }
+    }
+
+    public void setCurrentSoundVolume(int currentSoundVolume) {
         if (currentSoundVolume < minSoundVolume) {
             return;
         }
@@ -64,6 +86,5 @@ public class Radio {
             return;
         }
     }
-
 
 }
