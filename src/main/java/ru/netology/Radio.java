@@ -52,7 +52,7 @@ public class Radio {
     public int soundVolume;
     private int minSoundVolume = 0;
     private int maxSoundVolume = 100;
-    private int currentSoundVolume;
+    public int currentSoundVolume;
 
     public int getCurrentSoundVolume() {
         return currentSoundVolume;
