@@ -2,12 +2,18 @@ package ru.netology;
 
 public class Radio {
 
-    //Станции
-
-    public int radioStationNumber;
+    private int radioStationNumber;
     private int minStationNumber = 0;
     private int maxStationNumber = 9;
     public int currentStation;
+    public int soundVolume;
+    private int minSoundVolume = 0;
+    private int maxSoundVolume = 100;
+    public int currentSoundVolume;
+
+    public int getRadioStationNumber() {
+        return radioStationNumber;
+    }
 
     public int getCurrentStation() {
         return currentStation;
@@ -19,6 +25,22 @@ public class Radio {
 
     public int getMaxStationNumber() {
         return maxStationNumber;
+    }
+
+    public int getSoundVolume() {
+        return soundVolume;
+    }
+
+    public int getCurrentSoundVolume() {
+        return currentSoundVolume;
+    }
+
+    public int getMinSoundVolume() {
+        return minSoundVolume;
+    }
+
+    public int getMaxSoundVolume() {
+        return maxSoundVolume;
     }
 
     public void setNextStation() {
@@ -47,25 +69,6 @@ public class Radio {
         currentStation = newCurrentStation;
     }
 
-    //Громкость
-
-    public int soundVolume;
-    private int minSoundVolume = 0;
-    private int maxSoundVolume = 100;
-    public int currentSoundVolume;
-
-    public int getCurrentSoundVolume() {
-        return currentSoundVolume;
-    }
-
-    public int getMinSoundVolume() {
-        return minSoundVolume;
-    }
-
-    public int getMaxSoundVolume() {
-        return maxSoundVolume;
-    }
-
     public void setTurnUpVolume() {
         if (currentSoundVolume < maxSoundVolume) {
             currentSoundVolume = currentSoundVolume + 1;
@@ -78,13 +81,14 @@ public class Radio {
         }
     }
 
-    public void setCurrentSoundVolume(int currentSoundVolume) {
-        if (currentSoundVolume < minSoundVolume) {
+    public void setCurrentSoundVolume(int newCurrentSoundVolume) {
+        if (newCurrentSoundVolume < minSoundVolume) {
             return;
         }
-        if (currentSoundVolume > maxSoundVolume) {
+        if (newCurrentSoundVolume > maxSoundVolume) {
             return;
         }
+        currentSoundVolume = newCurrentSoundVolume;
     }
 
 }

@@ -7,6 +7,16 @@ public class RadioTest {
 
     // Тесты станций
     @Test
+    void callingRadioStationNumber() {
+        Radio radio = new Radio();
+        radio.getRadioStationNumber();
+
+        int expected = radio.currentStation;
+        int actual = radio.currentStation;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     void callingCurrentStation() {
         Radio radio = new Radio();
         radio.getCurrentStation();
@@ -132,6 +142,15 @@ public class RadioTest {
     }
 
     //Тесты звука
+    @Test
+    void callingSoundVolume() {
+        Radio radio = new Radio();
+        radio.getSoundVolume();
+
+        int expected = radio.currentSoundVolume;
+        int actual = radio.currentSoundVolume;
+        Assertions.assertEquals(expected, actual);
+    }
 
     @Test
     void callingCurrentSoundVolume() {
