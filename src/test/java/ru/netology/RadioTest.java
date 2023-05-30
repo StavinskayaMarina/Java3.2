@@ -8,7 +8,7 @@ public class RadioTest {
     // Тесты станций
     @Test
     void callingСNumber() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         radio.getRadioStationNumber();
 
         int expected = radio.getRadioStationNumber();
@@ -18,7 +18,7 @@ public class RadioTest {
 
     @Test
     void callingCurrentStation() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         radio.getCurrentStation();
 
         int expected = radio.getCurrentStation();
@@ -28,7 +28,7 @@ public class RadioTest {
 
     @Test
     void callMinStation() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         radio.getMinStationNumber();
 
         int expected = radio.getMinStationNumber();
@@ -38,7 +38,7 @@ public class RadioTest {
 
     @Test
     void callMaxStation() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         radio.getMaxStationNumber();
 
         int expected = radio.getMaxStationNumber();
@@ -48,7 +48,7 @@ public class RadioTest {
 
     @Test
     void switchToNextStationFromMiddle() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         radio.setCurrentStation(5);
         radio.setNextStation();
 
@@ -59,7 +59,7 @@ public class RadioTest {
 
     @Test
     void switchToNextStationFromMin() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         radio.setNextStation();
 
         int expected = 1;
@@ -69,7 +69,7 @@ public class RadioTest {
 
     @Test
     void switchToNextStationFromMax() {  // максимальная, клиент нажал на кнопку next, то текущей должна стать нулевая.
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         radio.setCurrentStation(9);
         radio.setNextStation();
 
@@ -81,7 +81,7 @@ public class RadioTest {
 
     @Test
     void switchToPrevStationFromMiddle() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         radio.setCurrentStation(7);
         radio.setPrevStation();
 
@@ -92,7 +92,7 @@ public class RadioTest {
 
     @Test
     void switchToPrevStationFromMin() { //текущая радиостанция — 0,нажал на кнопку prev на пульте, то текущей должна стать максимальная
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         radio.setPrevStation();
 
         int expected = radio.getMaxStationNumber();
@@ -102,7 +102,7 @@ public class RadioTest {
 
     @Test
     void switchToPrevStationFromMax() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         radio.setCurrentStation(9);
         radio.setPrevStation();
 
@@ -113,7 +113,7 @@ public class RadioTest {
 
     @Test
     void correctStationValue() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         radio.setCurrentStation(8);
 
         int expected = 8;
