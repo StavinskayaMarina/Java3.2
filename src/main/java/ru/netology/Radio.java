@@ -10,7 +10,15 @@ public class Radio {
     private int minSoundVolume = 0;
     private int maxSoundVolume = 100;
     private int currentSoundVolume;
-    private int quantityRadioStation;
+
+    public Radio(int size) { //задавать количество радиостанций при создании объекта
+
+        maxStationNumber = (minStationNumber + size) - 1;
+    }
+
+    public Radio() {
+
+    }
 
     public int getRadioStationNumber() {
         return radioStationNumber;
@@ -60,7 +68,7 @@ public class Radio {
         }
     }
 
-    public void setCurrentStation(int newCurrentStation) {
+    public void setCurrentStation(int newCurrentStation) {   //сеттер текущей станции
         if (newCurrentStation < minStationNumber) {
             return;
         }
