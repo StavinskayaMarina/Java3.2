@@ -19,10 +19,6 @@ public class Radio {
     private int minSoundVolume = 0;
     private int maxSoundVolume = 100;
     private int currentSoundVolume;
-    private int NextStation;
-    private int PrevStation;
-    private int TurnUpVolume;
-    private int TurnDownVolume;
 
     public void setNextStation() {
         if (currentStation < maxStationNumber) {
